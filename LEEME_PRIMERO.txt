@@ -1,0 +1,64 @@
+BEESAFE — BETA ACADÉMICA · FÍSICA II
+====================================
+
+INICIAR EN WINDOWS
+1. Descomprime completamente el archivo ZIP (no ejecutes desde dentro del ZIP).
+2. Debes tener Java JDK/JRE 17 o superior (ejemplo: Temurin JDK 25).
+3. Haz doble clic en Iniciar_BeeSafe.bat. (No utiliza PowerShell ni requiere cambiar politicas de ejecucion.)
+4. Se abrirá BeeSafe automáticamente en tu navegador.
+   Dirección local de respaldo: http://127.0.0.1:8765
+5. Para detener el programa utiliza Detener_BeeSafe.bat.
+
+FUNCIONA SIN INTERNET.
+No necesitas instalar Git, Node.js, Maven ni PostgreSQL para usar esta beta.
+La versión entregada usa un servidor real programado en Java 17+ con
+almacenamiento local de datos en JSON, HTML/CSS/JavaScript y MathJax local.
+Esta variante autocontenida se eligió para facilitar la ejecución con doble clic.
+La arquitectura React/Spring Boot/PostgreSQL descrita durante la planificación
+queda como opción de evolución; NO es el stack incluido en este ZIP.
+
+¿CÓMO EXPLORARLA?
+- En pantalla de bienvenida selecciona Apicultor, Técnico o Investigador.
+- Pulsa Entrar. No hay contraseñas reales: beta de demostración.
+- Cambia de rol en el selector de la esquina superior derecha.
+- Pulsa el icono del sol o luna para cambiar entre modos claro y oscuro.
+- Contrae el menú lateral con el botón de tres rayas; quedan visibles iconos.
+- Como Técnico abre Monitoreo e Iniciar simulación.
+- La simulación es única, compartida y no se reinicia al cambiar de rol.
+- Como Apicultor registra observaciones mientras continúa el monitoreo.
+- Como Investigador consulta Análisis, Centro de Física II y Calculadoras.
+- El historial se conserva en datos/estado.json, aunque cierres el navegador.
+- Como Técnico puedes Restablecer demo para repetir la exposición.
+
+CONTROL DE ACCESO
+Roles de demostración: Apicultor, Técnico, Investigador.
+NO hay autenticación real. El rol es seleccionado libremente con fines
+académicos, y no es apto para desplegar en un servidor público.
+
+CIENCIA Y LIMITACIONES
+- TODOS los valores generados por el simulador son ficticios.
+- El programa no mide campos reales ni diagnostica riesgo para las abejas.
+- Los cálculos de conductor, carga puntual, Faraday, RMS, etc. son modelos
+  con supuestos específicos, que se explican en la biblioteca de Física II.
+- Los indicadores de actividad no dependen causalmente de las lecturas EM.
+
+GUARDAR INFORMES
+En Informes selecciona Imprimir / Guardar PDF y elige el destino
+"Guardar como PDF" en la ventana del navegador. También exporta CSV.
+
+POSIBLES PROBLEMAS
+- Si Java no se encuentra, reinstala el JDK y activa su PATH; reinicia Windows.
+- Si el puerto local 8765 está ocupado, cierra el proceso que lo ocupa.
+- Revisa logs/beesafe-error.log para errores del servidor.
+- No abras web/index.html directamente: usa el archivo BAT.
+- Para restaurar datos ficticios desde cero, entra como Técnico y utiliza
+  "Restablecer demo" en Monitoreo (pedirá confirmación).
+
+IMPORTANTE: el archivo ZIP y la carpeta original contienen recursos gráficos
+PNG, el código fuente de la interfaz, el código fuente Java, clases compiladas
+y el iniciador. Consulta docs/GUIA_TECNICA.md para más información.
+
+CORRECCION DEL INICIADOR
+- Esta version utiliza solo archivos BAT y Java; no requiere ejecutar scripts .ps1.
+- Si Windows muestra un aviso de seguridad, extrae el ZIP primero en una carpeta normal.
+- Si falla el inicio, consulta logs/beesafe-error.log y comprueba Java con java -version.

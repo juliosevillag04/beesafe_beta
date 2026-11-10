@@ -1,0 +1,21 @@
+BEESAFE BETA - PUBLICAR EN RAILWAY SIN GIT
+========================================
+Advertencia: uso académico DEMO. Todas las personas con el enlace pueden modificar o restablecer los mismos registros porque esta beta no implementa autenticación real. Los datos de la instancia pueden perderse al reiniciar o volver a desplegar.
+
+1) Instala Node.js si todavía no está instalado (https://nodejs.org).
+2) Abre PowerShell y ejecuta: npm install -g @railway/cli
+3) Extrae este ZIP, abre PowerShell DENTRO de la carpeta BeeSafe_Beta (la que tiene Dockerfile).
+4) Ejecuta: railway up
+5) Railway abrirá inicio de sesión y permitirá crear proyecto/servicio. Si ya tienes uno, usa railway link y luego railway up.
+6) Abre el panel del proyecto en https://railway.com y entra en el servicio, Configuración / Networking / Public Networking / Generate Domain.
+7) Abre el enlace HTTPS indicado por Railway.
+
+Puntos técnicos:
+- Dockerfile construye Java 21 y aloja el frontend + API en el mismo servidor.
+- BEESAFE_HOST=0.0.0.0 dentro del contenedor.
+- Se usa PORT asignado por Railway (si existe).
+- /api/shutdown está deshabilitado en despliegue público.
+- El guardado en /app/datos es EFÍMERO: no garantizar conservación de registros entre despliegues.
+- Antes de publicar, revisa los precios/uso del plan de Railway.
+
+Si necesitas datos persistentes y control de usuarios real, hay que implementar base de datos y autenticación antes de compartirlo ampliamente.
