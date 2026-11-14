@@ -10,3 +10,53 @@
 @media(max-width:1000px){.cols-main,.cols-sidebar{grid-template-columns:1fr}.grid.cols3{grid-template-columns:repeat(2,minmax(0,1fr))}.topbar{padding:12px 18px}.top-left .crumb{display:none}.login-page{grid-template-columns:1fr}.login-left{min-height:330px;padding:28px}.login-left .login-hero{position:absolute;right:30px;bottom:6px;width:35%;height:215px;min-height:0}.login-left h1{font-size:41px}.login-right{padding:40px 24px}.login-content{max-width:620px}.side-brand img{width:126px}}
 @media(max-width:750px){.sidebar{width:76px;flex-basis:76px;padding:20px 8px}.sidebar .side-brand{justify-content:center}.sidebar .side-brand img{width:35px;height:35px;object-fit:contain}.sidebar .nav-label,.sidebar .side-section,.sidebar .demo-mini{display:none}.sidebar .nav-item{justify-content:center;padding:12px}.sidebar .side-bottom .nav-item{justify-content:center}.sidebar-toggle{display:none}.shell.collapsed .sidebar{width:76px;flex-basis:76px}.main{padding:19px 13px}.pagehead{flex-direction:column;align-items:flex-start}.topbar{min-height:65px;gap:6px}.top-left .titlecrumb{font-size:12px}.top-right{gap:6px}.top-right .role-select{min-width:112px;width:112px;font-size:11px;padding:8px}.top-right .pill-status{display:none}.top-right .avatar{display:none}.grid.cols2,.grid.cols3,.grid.cols4,.twochart{grid-template-columns:1fr}.welcome-card{padding:20px}.welcome-card>img{display:none}.fieldgrid,.fieldgrid.cols3{grid-template-columns:1fr}.pagehead h1{font-size:24px}.login-left .login-hero{opacity:.5}.barrow{grid-template-columns:76px minmax(20px,1fr) 70px}.foot{padding-left:14px}}
 @media print{body{background:#fff!important;color:#111!important}.sidebar,.topbar,.foot,.btn,.no-print,#toast-root{display:none!important}.workspace{display:block!important}.main{padding:0!important;max-width:none!important}.card,.report-preview{box-shadow:none!important;border-color:#ddd!important;page-break-inside:avoid}.report-only{display:block!important}.print-report .main>*:not(.report-container){display:none!important}.report-container{display:block!important}.report-container .report-preview{border:0!important;padding:0!important}}
+
+
+/* BeeSafe — Fórmulas matemáticas MathJax: legibilidad y modo claro/oscuro. */
+.formula-tex {
+  display: block;
+  padding: 20px 18px;
+  min-height: 78px;
+  border-radius: 12px;
+  background: var(--surface2);
+  color: var(--text);
+  text-align: center;
+  font-size: clamp(18px, 1.75vw, 24px);
+  line-height: 1.65;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.formula-tex mjx-container[jax="CHTML"] {
+  color: inherit;
+  max-width: none;
+}
+.formula-tex mjx-container[jax="CHTML"][display="true"] {
+  margin: .15em auto !important;
+  text-align: center;
+}
+.formula-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.formula-copy-row {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 6px;
+}
+.copy-formula {
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .formula-name { align-items: flex-start; flex-wrap: wrap; }
+  .formula-actions { justify-content: flex-start; }
+  .formula-tex { padding: 17px 12px; font-size: 18px; }
+}
+@media print {
+  .formula-tex { background: #f4f5f7 !important; color: #111 !important; }
+  .formula-actions, .formula-copy-row { display: none !important; }
+}
